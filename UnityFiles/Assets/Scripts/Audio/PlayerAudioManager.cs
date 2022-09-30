@@ -19,7 +19,7 @@ public class PlayerAudioManager : MonoBehaviour
     public AudioClip[] herbsClips;
     public AudioClip[] mudClips;
 
-    [HideInInspector] public AudioSource AS_Movement;
+    public AudioSource AS_Movement;
 
 
     private TerrainDetector terrainDetector;
