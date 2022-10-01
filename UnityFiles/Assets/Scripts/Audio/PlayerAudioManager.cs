@@ -10,9 +10,6 @@ public class PlayerAudioManager : MonoBehaviour
     public AudioClip[] swordSwing;
     public AudioClip[] attackGrunt;
 
-    [HideInInspector] public AudioSource AS_SwordSwing;
-    [HideInInspector] public AudioSource AS_AttackGrunt;
-
     [Header("Clothes Rustling")]
     public AudioClip[] clothesAudio;
 
@@ -28,7 +25,7 @@ public class PlayerAudioManager : MonoBehaviour
     public AudioClip[] herbsWalk;
     public AudioClip[] mudWalk;
 
-    public AudioSource AS_Movement;
+    public AudioSource audioSource;
 
 
     private TerrainDetector terrainDetector;
@@ -37,31 +34,28 @@ public class PlayerAudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AS_SwordSwing = gameObject.AddComponent<AudioSource>();
-        AS_AttackGrunt = gameObject.AddComponent<AudioSource>();
-
-        AS_Movement = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         terrainDetector = new TerrainDetector();
     }
 
     //play weapon woosh audio
     public void PlaySwingAudio()
     {
-        AS_SwordSwing.clip = swordSwing[Random.Range(0, swordSwing.Length)];
-        AS_SwordSwing.Play();
+        audioSource.clip = swordSwing[Random.Range(0, swordSwing.Length)];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
     public void PlayAttackGrunt()
     {
-        AS_AttackGrunt.clip = attackGrunt[Random.Range(0, attackGrunt.Length)];
-        AS_AttackGrunt.Play();
+        audioSource.clip = attackGrunt[Random.Range(0, attackGrunt.Length)];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
     //play clothes audio
     public void PlayClothesAudio()
     {
-        AS_Movement.clip = clothesAudio[Random.Range(0, clothesAudio.Length)];
-        AS_Movement.PlayOneShot(AS_Movement.clip);
+        audioSource.clip = clothesAudio[Random.Range(0, clothesAudio.Length)];
+        audioSource.PlayOneShot(audioSource.clip);
     }
     
     
@@ -69,14 +63,14 @@ public class PlayerAudioManager : MonoBehaviour
     public void PlayFootsteps()
     {
         AudioClip clip = GetRandomClip();
-        AS_Movement.PlayOneShot(clip);
+        audioSource.PlayOneShot(clip);
     }
 
     // play walking footsteps audio
     public void PlayWalkingFootsteps()
     {
         AudioClip clip = GetRandomWalkingClip();
-        AS_Movement.PlayOneShot(clip);
+        audioSource.PlayOneShot(clip);
     }
 
 
