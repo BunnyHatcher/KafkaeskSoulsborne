@@ -2293,6 +2293,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9f61c29f0fd53754983eac1f7c5f8748, type: 3}
   AS_SwordSwing: {fileID: 0}
   AS_AttackGrunt: {fileID: 0}
+  clothesAudio:
+  - {fileID: 8300000, guid: d68710df826386e42b774ca39f865373, type: 3}
+  - {fileID: 8300000, guid: 57135e7fadeccdc47aef6a8136293386, type: 3}
+  - {fileID: 8300000, guid: daf8393d1f856f54e93c2e496f12828b, type: 3}
+  - {fileID: 8300000, guid: 144a106bd46dc5d4c930c4f40832158c, type: 3}
+  - {fileID: 8300000, guid: b27b2bce56ed0b14893b27639b3bd201, type: 3}
   mossClips:
   - {fileID: 8300000, guid: 857e13957d17a074781d84f20553eea0, type: 3}
   - {fileID: 8300000, guid: 81f63607ae7227a4bb5e2acbbe967145, type: 3}
