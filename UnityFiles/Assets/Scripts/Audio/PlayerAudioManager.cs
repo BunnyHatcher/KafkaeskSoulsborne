@@ -35,6 +35,7 @@ public class PlayerAudioManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
         terrainDetector = new TerrainDetector();
     }
 
