@@ -8,25 +8,36 @@ public class PlayerAudioManager : MonoBehaviour
     //private GameObject Debugging;
 
     [Header("Attack Audio")]
-    public AudioClip[] swordSwing;
-    public AudioClip[] attackGrunt;
+    [SerializeField]
+    private AudioClip[] swordSwing;
+    [SerializeField]
+    private AudioClip[] attackGrunt;
 
     [Header("Clothes Rustling")]
-    public AudioClip[] clothesAudio;
+    [SerializeField]
+    private AudioClip[] clothesAudio;
 
     [Header("Running Footsteps")]
-    public AudioClip[] mossClips;
-    public AudioClip[] grassClips;
-    public AudioClip[] herbsClips;
-    public AudioClip[] mudClips;
+    [SerializeField]
+    private AudioClip[] mossClips;
+    [SerializeField]
+    private AudioClip[] grassClips;
+    [SerializeField]
+    private AudioClip[] herbsClips;
+    [SerializeField]
+    private AudioClip[] mudClips;
 
     [Header("Walking Footsteps")]
-    public AudioClip[] mossWalk;
-    public AudioClip[] grassWalk;
-    public AudioClip[] herbsWalk;
-    public AudioClip[] mudWalk;
+    [SerializeField]
+    private AudioClip[] mossWalk;
+    [SerializeField]
+    private AudioClip[] grassWalk;
+    [SerializeField]
+    private AudioClip[] herbsWalk;
+    [SerializeField]
+    private AudioClip[] mudWalk;
 
-    public AudioSource audioSource;
+    private AudioSource audioSource;
 
 
     private TerrainDetector terrainDetector;
@@ -47,6 +58,7 @@ public class PlayerAudioManager : MonoBehaviour
         audioSource.PlayOneShot(audioSource.clip);
     }
 
+    // play Attack Grunt
     public void PlayAttackGrunt()
     {
         audioSource.clip = attackGrunt[Random.Range(0, attackGrunt.Length)];
@@ -54,23 +66,25 @@ public class PlayerAudioManager : MonoBehaviour
     }
 
     //play clothes audio
-    public void PlayClothesAudio()
+    private void PlayClothesAudio()
     {
+        
         audioSource.clip = clothesAudio[Random.Range(0, clothesAudio.Length)];
         audioSource.PlayOneShot(audioSource.clip);
         //Debug.Log(Debugging.name);
+        
     }
     
     
     // play running footsteps audio
-    public void PlayFootsteps()
+    private void PlayFootsteps()
     {
         AudioClip clip = GetRandomClip();
         audioSource.PlayOneShot(clip);
     }
 
     // play walking footsteps audio
-    public void PlayWalkingFootsteps()
+    private void PlayWalkingFootsteps()
     {
         AudioClip clip = GetRandomWalkingClip();
         audioSource.PlayOneShot(clip);
