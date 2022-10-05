@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerAudioManager : MonoBehaviour
 {
+    //private GameObject Debugging;
 
     [Header("Attack Audio")]
     public AudioClip[] swordSwing;
@@ -57,6 +58,7 @@ public class PlayerAudioManager : MonoBehaviour
     {
         audioSource.clip = clothesAudio[Random.Range(0, clothesAudio.Length)];
         audioSource.PlayOneShot(audioSource.clip);
+        //Debug.Log(Debugging.name);
     }
     
     
