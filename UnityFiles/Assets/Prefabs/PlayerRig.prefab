@@ -1644,6 +1644,50 @@ PrefabInstance:
       propertyPath: attackGrunt.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: 9f61c29f0fd53754983eac1f7c5f8748, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c8ffa2f1b3f724813888410f84ac35a5, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 08d976f6c01624fc2a87f39da2af3cfb, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 504fa545a32ee498b9d628dee7cc36af, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5daecfb6216df4bbaa6b6379e4003b88, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: ad6b6437feb464dd6a36cfb122b1425e, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: d4b29971fa0ce4bfc857e0f357d8758d, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 670a4f3c322294a8881ac54081602a73, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: eab8e344fff1f46caa15966d23ee1a6c, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c86f9d3b36ff4d2cbfa2d2d76bae17d, type: 3}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: weaponImpactSFX.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 601416303535d44bba7646e43f371701, type: 3}
     - target: {fileID: 4719377670406151067, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.18434416
@@ -2294,6 +2338,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7823389533271411146}
         m_TargetAssemblyTypeName: CharacterEffectsManager, Assembly-CSharp
         m_MethodName: PlayBloodFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7823389533271411146}
+        m_TargetAssemblyTypeName: CharacterEffectsManager, Assembly-CSharp
+        m_MethodName: PlayWeaponImpactAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

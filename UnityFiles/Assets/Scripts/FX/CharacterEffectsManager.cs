@@ -14,7 +14,10 @@ public class CharacterEffectsManager : MonoBehaviour
     [Header("Damage FX")]
     public GameObject[] bloodFX;
 
-    
+    [Header("Weapon Impact SFX")]
+    public AudioClip[] weaponImpactSFX;
+
+
 
 
 
@@ -65,14 +68,19 @@ public class CharacterEffectsManager : MonoBehaviour
     }
 
 
-
-
-    private void OnCollisionEnter(Collision other)
+    //play weapon impact audio
+    public void PlayWeaponImpactAudio()
     {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = weaponImpactSFX[Random.Range(0, weaponImpactSFX.Length)];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
-    
 
-    
+
+
+
+
+
 
 }

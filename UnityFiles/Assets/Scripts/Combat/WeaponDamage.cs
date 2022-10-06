@@ -10,7 +10,7 @@ public class WeaponDamage : MonoBehaviour
 
     private float knockback;
 
-    public GameObject bloodFX;
+    //public GameObject bloodFX;
 
     public GameObject Player;
 
@@ -83,7 +83,7 @@ public class WeaponDamage : MonoBehaviour
             //instance.GetComponent<BFX_BloodSettings>().GroundHeight = 0f;
 
             //play weapon impact audio
-            FindObjectOfType<AudioManager>().Play("WeaponImpact");
+            //FindObjectOfType<AudioManager>().Play("WeaponImpact");
 
 
         }

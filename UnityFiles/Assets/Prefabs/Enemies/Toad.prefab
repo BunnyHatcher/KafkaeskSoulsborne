@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7198843392468747742}
   - component: {fileID: 6430660567591440294}
   - component: {fileID: 938790009}
+  - component: {fileID: 3014377636852404258}
   m_Layer: 0
   m_Name: Toad
   m_TagString: Untagged
@@ -215,6 +216,108 @@ MonoBehaviour:
   - {fileID: 5494213943435191861, guid: db51fe09adf27d640b4e10018c2d76ba, type: 3}
   - {fileID: 5170585893340993107, guid: 7b88f11816abaa34c9e02cbaa8485321, type: 3}
   - {fileID: 1165703760847671896, guid: bb596cd440832554089a7125852e836f, type: 3}
+  weaponImpactSFX:
+  - {fileID: 8300000, guid: 43b6ab126229f458fa30d1699b53dd51, type: 3}
+  - {fileID: 8300000, guid: b104d423e1b8649b3a9a0b93be49570f, type: 3}
+  - {fileID: 8300000, guid: a6fad32b67264407286c8883c66c071b, type: 3}
+  - {fileID: 8300000, guid: 9ed4362de5baf4ae49d49d8c4ddb2f91, type: 3}
+  - {fileID: 8300000, guid: dd5cf0c88bc6e4f039eb5b5b819af661, type: 3}
+--- !u!82 &3014377636852404258
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404490044461817950}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1754845392481118538, guid: 8d90d8f6c9262324db6a9d77c5bf6cd7, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7745218524435319938
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +387,18 @@ MonoBehaviour:
       - m_Target: {fileID: 938790009}
         m_TargetAssemblyTypeName: CharacterEffectsManager, Assembly-CSharp
         m_MethodName: PlayBloodFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 938790009}
+        m_TargetAssemblyTypeName: CharacterEffectsManager, Assembly-CSharp
+        m_MethodName: PlayWeaponImpactAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
