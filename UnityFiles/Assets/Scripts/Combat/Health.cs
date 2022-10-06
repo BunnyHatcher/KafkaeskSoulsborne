@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -8,6 +9,9 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
 
     protected int health;
+
+    //public PlayerHealthbar playerHealthbar;
+
     private bool isInvulnerable = false;
 
     public event Action OnTakeDamage; //event to be invoked whenever player or enemy takes damage
@@ -15,9 +19,13 @@ public class Health : MonoBehaviour
 
     public bool IsDead => health == 0; //short way to check anywhere else if IsDead is true and returning if health is 0 
 
+    
+    
     protected void Start()
     {
-        health = maxHealth; 
+        // at the start - don't forget to set the player's healt as well as his healthbar to max value
+        health = maxHealth;
+        //playerHealthbar.SetMaxHealth(maxHealth);
     }
 
     public void SetInvulnerable(bool isInvulnerable)
@@ -30,12 +38,18 @@ public class Health : MonoBehaviour
     {
         if(health <= 0) { return; }
 
-        if(isInvulnerable) { return; } // cancel calculation if invulnerability is turned on
+        if(isInvulnerable)  // cancel calculation if invulnerability is turned on
+        {
+            return;
+        }
 
         health = Mathf.Max(health - damage, 0); // returns either current health value or 0 if it goes below 0
 
         OnTakeDamage?.Invoke(); // invoke event when damage is dealt
 
+        // Set HealtBar to current health
+        //playerHealthbar.SetHealth(health);
+        
         //play pain audio
         FindObjectOfType<AudioManager>().Play("PlayerPain");
         

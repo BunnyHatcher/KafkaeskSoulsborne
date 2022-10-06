@@ -11,11 +11,13 @@ public class CharacterEffectsManager : MonoBehaviour
     [Header("WeaponFX")]
     public WeaponEffects WeaponFX;
     
-    [Header("Damage FX")]
+    [Header("Impact FX")]
     public GameObject[] bloodFX;
+    public GameObject shieldBlockFX;
 
-    [Header("Weapon Impact SFX")]
+    [Header("Impact Audio")]
     public AudioClip[] weaponImpactSFX;
+    public AudioClip[] shieldBlockSFX;
 
 
 
@@ -62,19 +64,37 @@ public class CharacterEffectsManager : MonoBehaviour
     {
         GameObject weapon = GameObject.Find("WeaponLogic");
         
+        
+        // get bool isInvulnerable and use it to create if condition for shield block effects
+
         // trigger BloodFX
         var instance = Instantiate(bloodFX[Random.Range(0, bloodFX.Length)], weapon.transform.position, Quaternion.identity);
 
     }
 
+    /*
+    public void PlayShieldBlockFX()
+    {
+        GameObject shield = GameObject.Find("Shield");
 
-    //play weapon impact audio
-    public void PlayWeaponImpactAudio()
+        // trigger ShieldBlockFX
+        var instance = Instantiate(shieldBlockFX, shield.transform.position, Quaternion.identity);
+
+    }
+    */
+
+
+
+
+        //play weapon impact audio
+        public void PlayWeaponImpactAudio()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.clip = weaponImpactSFX[Random.Range(0, weaponImpactSFX.Length)];
         audioSource.PlayOneShot(audioSource.clip);
     }
+
+
 
 
 

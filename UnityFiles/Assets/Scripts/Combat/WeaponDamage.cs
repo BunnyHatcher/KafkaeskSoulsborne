@@ -77,15 +77,6 @@ public class WeaponDamage : MonoBehaviour
             // Invoke Hit Event
             weaponHitEvent.Invoke();
 
-
-            // trigger BloodFX
-            //var instance = Instantiate(bloodFX, transform.position, Quaternion.identity);
-            //instance.GetComponent<BFX_BloodSettings>().GroundHeight = 0f;
-
-            //play weapon impact audio
-            //FindObjectOfType<AudioManager>().Play("WeaponImpact");
-
-
         }
 
         // trigger knockback
