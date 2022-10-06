@@ -20,6 +20,15 @@ public class WeaponDamage : MonoBehaviour
     // List where we store all the objects our weapon collided with
     private List<Collider> alreadyCollidedWith = new List<Collider>();
 
+    
+    //---------E V E N T S----------------------------------------------------------------------------------------
+
+    public UnityEvent weaponHitEvent;
+
+
+    //-----------------------------------------------------------------------------------------------------
+
+
 
     private void Awake()
     {
@@ -47,26 +56,30 @@ public class WeaponDamage : MonoBehaviour
         {
             health.DealDamage(damage);
 
-        /*
-            RaycastHit hit;
-            
-            Vector3 directionNormal = other.transform.position - transform.position;
+            /*
+                RaycastHit hit;
 
-            Vector3 contactPoint = new Vector3(0, 0, 0);
+                Vector3 directionNormal = other.transform.position - transform.position;
 
-            if (Physics.Raycast(transform.position, directionNormal, out hit))
-            {
-             contactPoint = hit.point;
-            }
+                Vector3 contactPoint = new Vector3(0, 0, 0);
+
+                if (Physics.Raycast(transform.position, directionNormal, out hit))
+                {
+                 contactPoint = hit.point;
+                }
 
 
-                //trigger message
-                Player.SendMessage("ApplyDamage", contactPoint);
+                    //trigger message
+                    Player.SendMessage("ApplyDamage", contactPoint);
 
-        */
+            */
+
+            // Invoke Hit Event
+            weaponHitEvent.Invoke();
+
 
             // trigger BloodFX
-            var instance = Instantiate(bloodFX, transform.position, Quaternion.identity);
+            //var instance = Instantiate(bloodFX, transform.position, Quaternion.identity);
             //instance.GetComponent<BFX_BloodSettings>().GroundHeight = 0f;
 
             //play weapon impact audio
@@ -75,6 +88,7 @@ public class WeaponDamage : MonoBehaviour
 
         }
 
+        // trigger knockback
         if(other.TryGetComponent<ForceReceiver>(out ForceReceiver forceReceiver))
         {
             Vector3 direction = (other.transform.position - myCollider.transform.position).normalized; //calculate force direction by subtracting my own position from the position of the otehr object

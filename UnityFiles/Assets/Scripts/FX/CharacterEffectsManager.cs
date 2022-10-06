@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 
@@ -11,10 +12,11 @@ public class CharacterEffectsManager : MonoBehaviour
     public WeaponEffects WeaponFX;
     
     [Header("Damage FX")]
-    public GameObject bloodFX;
+    public GameObject[] bloodFX;
+
     
-    
-    
+
+
 
     private void Awake()
     {
@@ -53,9 +55,18 @@ public class CharacterEffectsManager : MonoBehaviour
     */
 
 
-    
-    
-    
+    public void PlayBloodFX()
+    {
+        GameObject weapon = GameObject.Find("WeaponLogic");
+        
+        // trigger BloodFX
+        var instance = Instantiate(bloodFX[Random.Range(0, bloodFX.Length)], weapon.transform.position, Quaternion.identity);
+
+    }
+
+
+
+
     private void OnCollisionEnter(Collision other)
     {
     }

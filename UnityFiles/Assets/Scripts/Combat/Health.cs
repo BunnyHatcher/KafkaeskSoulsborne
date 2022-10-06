@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     public event Action OnTakeDamage; //event to be invoked whenever player or enemy takes damage
     public event Action OnDie; // event to be invoked whenever player or enemy dies
 
-    public bool IsDead => health == 0; //short mway to check anywhere else if IsDead is true and returning if health is 0 
+    public bool IsDead => health == 0; //short way to check anywhere else if IsDead is true and returning if health is 0 
 
     protected void Start()
     {
