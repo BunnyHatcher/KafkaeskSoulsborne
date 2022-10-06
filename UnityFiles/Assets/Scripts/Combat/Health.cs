@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     protected int health;
 
-    //public PlayerHealthbar playerHealthbar;
+    public PlayerHealthbar playerHealthbar;
 
     private bool isInvulnerable = false;
 
@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
     {
         // at the start - don't forget to set the player's healt as well as his healthbar to max value
         health = maxHealth;
-        //playerHealthbar.SetMaxHealth(maxHealth);
+        playerHealthbar.SetMaxHealth(maxHealth);
     }
 
     public void SetInvulnerable(bool isInvulnerable)
@@ -47,9 +47,8 @@ public class Health : MonoBehaviour
 
         OnTakeDamage?.Invoke(); // invoke event when damage is dealt
 
-        // Set HealtBar to current health
         //playerHealthbar.SetHealth(health);
-        
+
         //play pain audio
         FindObjectOfType<AudioManager>().Play("PlayerPain");
         

@@ -97,7 +97,13 @@ public class CharacterEffectsManager : MonoBehaviour
 
 
 
+    // Set HealtBar to current health
+    public void ReduceHealthBar()
+    {
+    
 
+
+    }
 
 
 
