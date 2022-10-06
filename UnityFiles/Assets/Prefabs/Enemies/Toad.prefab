@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8769221393862009996}
   - component: {fileID: 7198843392468747742}
   - component: {fileID: 6430660567591440294}
+  - component: {fileID: 938790009}
   m_Layer: 0
   m_Name: Toad
   m_TagString: Untagged
@@ -196,6 +197,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1892647730977594668}
   controller: {fileID: 6032159948294884152}
+--- !u!114 &938790009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404490044461817950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82047612417d2cf4a905489eff9323c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponFX: {fileID: 0}
+  bloodFX:
+  - {fileID: 8859926575668995837, guid: 097a30048e9007141899f834041a5ac7, type: 3}
+  - {fileID: 5494213943435191861, guid: db51fe09adf27d640b4e10018c2d76ba, type: 3}
+  - {fileID: 5170585893340993107, guid: 7b88f11816abaa34c9e02cbaa8485321, type: 3}
+  - {fileID: 1165703760847671896, guid: bb596cd440832554089a7125852e836f, type: 3}
 --- !u!1 &7745218524435319938
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +276,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodFX: {fileID: 1165703760847671896, guid: bb596cd440832554089a7125852e836f, type: 3}
+  Player: {fileID: 0}
   myCollider: {fileID: 6032159948294884152}
+  weaponHitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 938790009}
+        m_TargetAssemblyTypeName: CharacterEffectsManager, Assembly-CSharp
+        m_MethodName: PlayBloodFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &6404490044550855895
 Rigidbody:
   m_ObjectHideFlags: 0
