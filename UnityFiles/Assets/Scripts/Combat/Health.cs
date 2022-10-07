@@ -12,15 +12,21 @@ public class Health : MonoBehaviour
 
     public PlayerHealthbar playerHealthbar;
 
-    private bool isInvulnerable = false;
+    public bool isInvulnerable = false;
 
     public event Action OnTakeDamage; //event to be invoked whenever player or enemy takes damage
     public event Action OnDie; // event to be invoked whenever player or enemy dies
 
     public bool IsDead => health == 0; //short way to check anywhere else if IsDead is true and returning if health is 0 
 
-    
-    
+    //---------E V E N T S----------------------------------------------------------------------------------------
+
+    public UnityEvent damageTakenEvent;
+
+
+    //-----------------------------------------------------------------------------------------------------
+
+
     protected void Start()
     {
         // at the start - don't forget to set the player's healt as well as his healthbar to max value
@@ -47,7 +53,8 @@ public class Health : MonoBehaviour
 
         OnTakeDamage?.Invoke(); // invoke event when damage is dealt
 
-        //playerHealthbar.SetHealth(health);
+        //Invoke Events when taking damage -  why not using the OnTakeDamage Invoke from above? Well, it seems like that is another kind of event, an Action, not a Unity event
+        damageTakenEvent.Invoke();
 
         //play pain audio
         FindObjectOfType<AudioManager>().Play("PlayerPain");

@@ -7,7 +7,10 @@ using UnityEngine.Rendering;
 
 public class CharacterEffectsManager : MonoBehaviour
 {
-
+    
+    [SerializeField]Health scriptHealth;
+    
+    
     [Header("WeaponFX")]
     public WeaponEffects WeaponFX;
     
@@ -97,13 +100,7 @@ public class CharacterEffectsManager : MonoBehaviour
 
 
 
-    // Set HealtBar to current health
-    public void ReduceHealthBar()
-    {
     
-
-
-    }
 
 
 
