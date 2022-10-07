@@ -136,6 +136,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  playerHealthbar: {fileID: 0}
+  isInvulnerable: 0
+  damageTakenEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &1892647730977594668
 Animator:
   serializedVersion: 4
@@ -210,18 +215,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82047612417d2cf4a905489eff9323c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptHealth: {fileID: 0}
   WeaponFX: {fileID: 0}
   bloodFX:
   - {fileID: 8859926575668995837, guid: 097a30048e9007141899f834041a5ac7, type: 3}
   - {fileID: 5494213943435191861, guid: db51fe09adf27d640b4e10018c2d76ba, type: 3}
   - {fileID: 5170585893340993107, guid: 7b88f11816abaa34c9e02cbaa8485321, type: 3}
   - {fileID: 1165703760847671896, guid: bb596cd440832554089a7125852e836f, type: 3}
+  shieldBlockFX: {fileID: 0}
   weaponImpactSFX:
   - {fileID: 8300000, guid: 43b6ab126229f458fa30d1699b53dd51, type: 3}
   - {fileID: 8300000, guid: b104d423e1b8649b3a9a0b93be49570f, type: 3}
   - {fileID: 8300000, guid: a6fad32b67264407286c8883c66c071b, type: 3}
   - {fileID: 8300000, guid: 9ed4362de5baf4ae49d49d8c4ddb2f91, type: 3}
   - {fileID: 8300000, guid: dd5cf0c88bc6e4f039eb5b5b819af661, type: 3}
+  shieldBlockSFX:
+  - {fileID: 8300000, guid: 37189ce6c1305ca40a766dd939201162, type: 3}
+  - {fileID: 8300000, guid: 33baa82528009704faa2e82107510f50, type: 3}
+  - {fileID: 8300000, guid: dc0641a489f8006468c1346b1ba010da, type: 3}
+  - {fileID: 8300000, guid: c160bb8ea825f714ca1997bb01034fc9, type: 3}
+  - {fileID: 8300000, guid: 0f988878c24ff2e46b6177de72fc337f, type: 3}
 --- !u!82 &3014377636852404258
 AudioSource:
   m_ObjectHideFlags: 0
@@ -378,7 +391,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08d12b5dd32dae40a8936577a83750e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodFX: {fileID: 1165703760847671896, guid: bb596cd440832554089a7125852e836f, type: 3}
   Player: {fileID: 0}
   myCollider: {fileID: 6032159948294884152}
   weaponHitEvent:

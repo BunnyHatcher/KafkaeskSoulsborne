@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
     {
         // at the start - don't forget to set the player's healt as well as his healthbar to max value
         health = maxHealth;
-        playerHealthbar.SetMaxHealth(maxHealth);
+        //playerHealthbar.SetMaxHealth(maxHealth);
     }
 
     public void SetInvulnerable(bool isInvulnerable)

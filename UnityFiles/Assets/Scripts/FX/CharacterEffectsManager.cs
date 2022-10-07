@@ -65,26 +65,34 @@ public class CharacterEffectsManager : MonoBehaviour
 
     public void PlayBloodFX()
     {
-        GameObject weapon = GameObject.Find("WeaponLogic");
-        
+        //Debug.Log("BloodFX played");
         
         // get bool isInvulnerable and use it to create if condition for shield block effects
+        if (scriptHealth.isInvulnerable == true )
+        {
+            // Debug.Log("ShieldFX played");
 
-        // trigger BloodFX
-        var instance = Instantiate(bloodFX[Random.Range(0, bloodFX.Length)], weapon.transform.position, Quaternion.identity);
+            GameObject shield = GameObject.Find("Shield");
+
+            // trigger ShieldBlockFX
+            var instance = Instantiate(shieldBlockFX, shield.transform.position, Quaternion.identity);
+
+        }
+
+        else
+        { 
+            GameObject weapon = GameObject.Find("WeaponLogic");
+            // trigger BloodFX
+            var instance = Instantiate(bloodFX[Random.Range(0, bloodFX.Length)], weapon.transform.position, Quaternion.identity);
+
+        }
+        
+        
+
 
     }
 
-    /*
-    public void PlayShieldBlockFX()
-    {
-        GameObject shield = GameObject.Find("Shield");
-
-        // trigger ShieldBlockFX
-        var instance = Instantiate(shieldBlockFX, shield.transform.position, Quaternion.identity);
-
-    }
-    */
+    
 
 
 
@@ -92,9 +100,20 @@ public class CharacterEffectsManager : MonoBehaviour
         //play weapon impact audio
         public void PlayWeaponImpactAudio()
     {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = weaponImpactSFX[Random.Range(0, weaponImpactSFX.Length)];
-        audioSource.PlayOneShot(audioSource.clip);
+        if (scriptHealth.isInvulnerable == true)
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.clip = shieldBlockSFX[Random.Range(0, shieldBlockSFX.Length)];
+            audioSource.PlayOneShot(audioSource.clip);
+
+        }
+        
+        else
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.clip = weaponImpactSFX[Random.Range(0, weaponImpactSFX.Length)];
+            audioSource.PlayOneShot(audioSource.clip);
+        }
     }
 
 
