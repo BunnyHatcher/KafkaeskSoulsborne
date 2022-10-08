@@ -10,7 +10,7 @@ public class CharacterEffectsManager : MonoBehaviour
     
     [SerializeField]Health scriptHealth;
     
-    // REFACTORING ADVICE: WHY NOT USE ACCESS MODIFIER PROTECTED?
+    // REFACTORING ADVICE: WHY NOT USE ACCESS MODIFIER "PROTECTED"?
     [Header("WeaponFX")]
     public WeaponEffects WeaponFX;
     

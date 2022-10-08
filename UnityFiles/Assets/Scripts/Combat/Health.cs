@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     private int healthValue;
 
-    //---------------------------------------------------------------------------------------------
+    //---------------GETTERS / SETTERS-----------------------------------------------------------
     
     //Getter for healthValue
     public int GetHealthValue() { return healthValue; }
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     
     
-    public PlayerHealthbar playerHealthbar;
+    //public PlayerHealthbar playerHealthbar;
 
     public bool isInvulnerable = false;
 
@@ -44,7 +44,7 @@ public class Health : MonoBehaviour
     {
         // at the start - don't forget to set the player's healt as well as his healthbar to max value
         healthValue = maxHealth;
-        playerHealthbar.SetMaxHealth(maxHealth);
+        //playerHealthbar.SetMaxHealth(maxHealth);
 
     }
 
@@ -65,7 +65,7 @@ public class Health : MonoBehaviour
 
         healthValue = Mathf.Max(healthValue - damage, 0); // returns either current healthValue value or 0 if it goes below 0
 
-        playerHealthbar.SetHealth(healthValue);
+        //playerHealthbar.SetHealth(healthValue);
 
         OnTakeDamage?.Invoke(); // invoke event when damage is dealt
 

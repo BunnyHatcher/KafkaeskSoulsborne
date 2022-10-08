@@ -10,17 +10,16 @@ public class PlayerEffectsManager : CharacterEffectsManager
     // Set HealthBar to max health on start
     private void Start()
     {
-        playerHealth.GetHealthValue();
-        playerHealth.SetHealthValue(100);
+        //playerHealth.GetHealthValue();
+        //playerHealth.SetHealthValue(100);
+
+
          
     }
 
-    public void CalculatePlayerHealth()
+    public void DiminishHealthbar()
     {
-        Health healthScript = GetComponent<Health>();
-        
-        PlayerHealthbar playerHealthbar = GetComponent<PlayerHealthbar>();
-        
+                
         //playerHealthbar.SetHealth(health);
 
     }
