@@ -5,9 +5,15 @@ using UnityEngine;
 public class PlayerHealth : Health
 {
 
-    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private PlayerHealthbar playerHealthbar;
 
-    //private bool isInvulnerable = false;
+    protected override void Start()
+    {
+        // at the start - don't forget to set the player's healt as well as his healthbar to max value
+        healthValue = maxHealth;
+        playerHealthbar.SetMaxHealth(maxHealth);
+
+    }
 
 
 

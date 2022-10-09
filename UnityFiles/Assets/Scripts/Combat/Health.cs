@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
+    [SerializeField] protected int maxHealth = 100;
 
-    private int healthValue;
+    protected int healthValue;
 
     //---------------GETTERS / SETTERS-----------------------------------------------------------
     
@@ -36,11 +36,13 @@ public class Health : MonoBehaviour
 
     public UnityEvent damageTakenEvent;
 
+    public UnityEvent whenKilledEvent;
+
 
     //-----------------------------------------------------------------------------------------------------
 
 
-    protected void Start()
+    protected virtual void Start()
     {
         // at the start - don't forget to set the player's healt as well as his healthbar to max value
         healthValue = maxHealth;
@@ -84,9 +86,12 @@ public class Health : MonoBehaviour
 
             OnDie?.Invoke(); // invoke event when death has taken his toll
 
+            //Invoke Unity Events on death
+            whenKilledEvent.Invoke();
+
         }
 
-        Debug.Log(healthValue);
+        //Debug.Log(healthValue);
     }
 
     
