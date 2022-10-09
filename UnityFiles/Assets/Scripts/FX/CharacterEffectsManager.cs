@@ -7,12 +7,18 @@ using UnityEngine.Rendering;
 
 public class CharacterEffectsManager : MonoBehaviour
 {
-    
+    // REFACTORING ADVICE: use underscore for naming variables inside a class
+    //use capital letter for naming functions
+    //parameters inside a function start with a minuscule letter
+
     [SerializeField]Health scriptHealth;
     
     // REFACTORING ADVICE: WHY NOT USE ACCESS MODIFIER "PROTECTED"?
     [Header("WeaponFX")]
     public WeaponEffects WeaponFX;
+
+    public ParticleSystem weaponTrail;
+
     
     [Header("Impact FX")]
     public GameObject[] bloodFX;
@@ -33,12 +39,15 @@ public class CharacterEffectsManager : MonoBehaviour
 
     
 
-    public virtual void PlayWeaponFX()
+    public virtual void PlayWeaponTrail()
     {
-        if (WeaponFX != null)
-        {
-            WeaponFX.PlayWeaponFX();
-        }
+        weaponTrail.Play();
+
+    }
+
+    public virtual void StopWeaponTrail()
+    {
+        weaponTrail.Stop();
 
     }
 

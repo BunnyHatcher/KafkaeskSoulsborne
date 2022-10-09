@@ -6,11 +6,13 @@ public class WeaponHandler : MonoBehaviour
 {
 
     [SerializeField] private GameObject weaponLogic;
+    [SerializeField] private CharacterEffectsManager characterEffectsManager;
     
     public void EnableWeapon()
     {
 
         weaponLogic.SetActive(true);
+        characterEffectsManager.PlayWeaponTrail();
 
     }
 
@@ -18,6 +20,7 @@ public class WeaponHandler : MonoBehaviour
     {
 
         weaponLogic.SetActive(false);
+        characterEffectsManager.StopWeaponTrail();
 
     }
 
