@@ -15,6 +15,13 @@ public class PlayerHealth : Health
 
     }
 
+    public void DiminishHealthbar()
+    {
+
+        playerHealthbar.SetHealth(healthValue);
+
+    }
+
 
 
 

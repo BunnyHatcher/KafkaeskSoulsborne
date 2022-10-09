@@ -20,7 +20,7 @@ public class PlayerEffectsManager : CharacterEffectsManager
     public void DiminishHealthbar()
     {
                 
-        //playerHealthbar.SetHealth(health);
+        //playerHealthbar.SetHealth(healthValue);
 
     }
     
