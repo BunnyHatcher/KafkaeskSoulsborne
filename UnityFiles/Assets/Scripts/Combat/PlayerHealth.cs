@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : Health
 {
 
-    [SerializeField] private PlayerHealthbar playerHealthbar;
+    //[SerializeField] private PlayerHealthbar playerHealthbar;
 
     protected override void Start()
     {

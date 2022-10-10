@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] protected int maxHealth = 100;
 
-    protected int healthValue;
+    public int healthValue;
 
     //---------------GETTERS / SETTERS-----------------------------------------------------------
     
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     
     
-    //public PlayerHealthbar playerHealthbar;
+    public PlayerHealthbar playerHealthbar;
 
     public bool isInvulnerable = false;
 
@@ -46,7 +46,7 @@ public class Health : MonoBehaviour
     {
         // at the start - don't forget to set the player's healt as well as his healthbar to max value
         healthValue = maxHealth;
-        //playerHealthbar.SetMaxHealth(maxHealth);
+        playerHealthbar.SetMaxHealth(maxHealth);
 
     }
 
