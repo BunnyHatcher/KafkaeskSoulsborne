@@ -12,7 +12,7 @@ public class WeaponHandler : MonoBehaviour
     {
 
         weaponLogic.SetActive(true);
-        weaponLogic.GetComponentInChildren<GameObject>().SetActive(true);
+        //weaponLogic.GetComponentInChildren<GameObject>().SetActive(true);
 
     }
 
@@ -20,7 +20,7 @@ public class WeaponHandler : MonoBehaviour
     {
 
         weaponLogic.SetActive(false);
-        weaponLogic.GetComponentInChildren<GameObject>().SetActive(false);
+        //weaponLogic.GetComponentInChildren<GameObject>().SetActive(false);
 
     }
 
