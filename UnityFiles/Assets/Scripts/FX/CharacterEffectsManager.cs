@@ -83,10 +83,10 @@ public class CharacterEffectsManager : MonoBehaviour
         {
             // Debug.Log("ShieldFX played");
 
-            GameObject shield = GameObject.Find("Shield");
+            GameObject shieldImpact = GameObject.Find("ShieldImpactLocation");
 
             // trigger ShieldBlockFX
-            var instance = Instantiate(shieldBlockFX, shield.transform.position, Quaternion.identity);
+            var instance = Instantiate(shieldBlockFX, shieldImpact.transform.position, Quaternion.identity);
 
         }
 

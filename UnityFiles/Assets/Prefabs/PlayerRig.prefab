@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604864463}
-  m_LocalRotation: {x: 0.15571168, y: -0.10776966, z: 0.017092811, w: 0.98175734}
+  m_LocalRotation: {x: 0.15571167, y: -0.1077697, z: 0.017092815, w: 0.98175734}
   m_LocalPosition: {x: 21.559248, y: 17.67176, z: -21.612415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -930,7 +930,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658717508772329130}
-  m_LocalRotation: {x: -0.0000000037252903, y: 0.000000034420736, z: -0.0000000042574584, w: 1}
+  m_LocalRotation: {x: -0.0000000037252903, y: 1.8189894e-12, z: -2.2737368e-13, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1008,7 +1008,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658717509471622163}
-  m_LocalRotation: {x: 0.01786451, y: 1.3278623e-10, z: -1.8872015e-11, w: 0.99984044}
+  m_LocalRotation: {x: 0.017864518, y: 0.000000034204277, z: -0.0000000048523816, w: 0.99984044}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1171,6 +1171,37 @@ Transform:
   - {fileID: 4576754623799037}
   - {fileID: 4220755706102954825}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3774127902141026315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4116133178041594058}
+  m_Layer: 0
+  m_Name: ShieldImpactLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4116133178041594058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774127902141026315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5833, y: 1.5062, z: -0.0073}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9209432727342426413}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1658717509902671984
@@ -1654,6 +1685,10 @@ PrefabInstance:
       value: -0.0068773497
       objectReference: {fileID: 0}
     - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 201619521869211586}
+    - target: {fileID: 4550307857713150455, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
       propertyPath: bloodFX
       value: 
       objectReference: {fileID: 1165703760847671896, guid: bb596cd440832554089a7125852e836f, type: 3}
@@ -1950,16 +1985,32 @@ PrefabInstance:
       value: -1.2844216
       objectReference: {fileID: 0}
     - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
       propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7823389533271411146}
     - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
       propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DiminishHealthbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
       propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CharacterEffectsManager, Assembly-CSharp
+      value: PlayerEffectsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5957278349666330674, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
       propertyPath: cineTargetGroup
@@ -2240,6 +2291,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6028051881192632000, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
   m_PrefabInstance: {fileID: 6032487827727446077}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &201619521869211586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+  m_PrefabInstance: {fileID: 6032487827727446077}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818408441203852359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2292dc43405d74744a9aff3c3f87b49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &818408441203852359 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6407533288854713466, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
@@ -2354,6 +2416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthValue: 0
+  playerHealthbar: {fileID: 0}
   isInvulnerable: 0
   damageTakenEvent:
     m_PersistentCalls:
@@ -2397,7 +2461,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  playerHealthbar: {fileID: 0}
 --- !u!114 &2466324151140903836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2557,3 +2620,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec7ccff28c031c4abbeccb7f6a1cef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &9209432727342426413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3204814652606634256, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+  m_PrefabInstance: {fileID: 6032487827727446077}
+  m_PrefabAsset: {fileID: 0}
