@@ -74,15 +74,11 @@ public class Health : MonoBehaviour
         //Invoke Events when taking damage -  why not using the OnTakeDamage Invoke from above? Well, it seems like that is another kind of event, an Action, not a Unity event
         damageTakenEvent.Invoke();
 
-        //play pain audio
-        FindObjectOfType<AudioManager>().Play("PlayerPain");
+        
         
         
         if(healthValue == 0)
         {
-
-            //play death audio
-            FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
             OnDie?.Invoke(); // invoke event when death has taken his toll
 

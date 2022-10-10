@@ -491,7 +491,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658717508210676740}
-  m_LocalRotation: {x: 0.06149324, y: -0.000027999007, z: 0.0000017250155, w: 0.9981075}
+  m_LocalRotation: {x: 0.06149324, y: -0.000028033626, z: 0.000001727147, w: 0.9981075}
   m_LocalPosition: {x: 20.559248, y: 16.67176, z: -23.112415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -930,7 +930,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658717508772329130}
-  m_LocalRotation: {x: -0.0000000037252903, y: -0.000000034420736, z: 0.000000004256208, w: 1}
+  m_LocalRotation: {x: -0.0000000037252903, y: 0.000000034420736, z: -0.0000000042574584, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1008,7 +1008,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658717509471622163}
-  m_LocalRotation: {x: 0.01786451, y: -0.000000034207915, z: 0.0000000048516995, w: 0.99984044}
+  m_LocalRotation: {x: 0.01786451, y: 1.3278623e-10, z: -1.8872015e-11, w: 0.99984044}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1086,7 +1086,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658717509990905433}
-  m_LocalRotation: {x: -0.017819023, y: -0.000000017244021, z: 0.0000000018202401, w: 0.9998413}
+  m_LocalRotation: {x: -0.017819023, y: 0.00000001724584, z: -0.0000000018218317, w: 0.9998413}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1949,6 +1949,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.2844216
       objectReference: {fileID: 0}
+    - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871559582345828351, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
+      propertyPath: damageTakenEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CharacterEffectsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5957278349666330674, guid: 29afa1608b95a494c965ed694b012b29, type: 3}
       propertyPath: cineTargetGroup
       value: 
@@ -2329,6 +2341,63 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1406857600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818408441203852359}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcee526b0c4a89749a596f139684622c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  isInvulnerable: 0
+  damageTakenEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1406857600}
+        m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
+        m_MethodName: DiminishHealthbar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7823389533271411146}
+        m_TargetAssemblyTypeName: CharacterEffectsManager, Assembly-CSharp
+        m_MethodName: PlayPainAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  whenKilledEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7823389533271411146}
+        m_TargetAssemblyTypeName: CharacterEffectsManager, Assembly-CSharp
+        m_MethodName: PlayDeathAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  playerHealthbar: {fileID: 0}
 --- !u!114 &2466324151140903836
 MonoBehaviour:
   m_ObjectHideFlags: 0

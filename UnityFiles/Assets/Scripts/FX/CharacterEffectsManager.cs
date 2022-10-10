@@ -28,7 +28,9 @@ public class CharacterEffectsManager : MonoBehaviour
     public AudioClip[] weaponImpactSFX;
     public AudioClip[] shieldBlockSFX;
 
-
+    [Header("Pain Audio")]
+    public AudioClip[] painSFX;
+    public AudioClip[] deathSFX;
 
 
 
@@ -108,27 +110,41 @@ public class CharacterEffectsManager : MonoBehaviour
 
         //play weapon impact audio
         public void PlayWeaponImpactAudio()
-    {
-        if (scriptHealth.isInvulnerable == true)
         {
+            if (scriptHealth.isInvulnerable == true)
+            {
             AudioSource audioSource = GetComponent<AudioSource>();
             audioSource.clip = shieldBlockSFX[Random.Range(0, shieldBlockSFX.Length)];
             audioSource.PlayOneShot(audioSource.clip);
 
-        }
+            }
         
-        else
-        {
+            else
+            {
             AudioSource audioSource = GetComponent<AudioSource>();
             audioSource.clip = weaponImpactSFX[Random.Range(0, weaponImpactSFX.Length)];
             audioSource.PlayOneShot(audioSource.clip);
+            }
         }
+
+    public void PlayPainAudio()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = painSFX[Random.Range(0, painSFX.Length)];
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+
+    public void PlayDeathAudio()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = deathSFX[Random.Range(0, deathSFX.Length)];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
 
 
 
-    
+
 
 
 

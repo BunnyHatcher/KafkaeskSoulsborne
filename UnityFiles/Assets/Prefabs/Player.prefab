@@ -2591,6 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLogic: {fileID: 879861454959356712}
+  weaponTrail: {fileID: 0}
 --- !u!114 &5871559582345828351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2604,6 +2605,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  isInvulnerable: 0
+  damageTakenEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4550307857713150455}
+        m_TargetAssemblyTypeName: CharacterEffectsManager, Assembly-CSharp
+        m_MethodName: PlayPainAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  whenKilledEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4550307857713150455}
+        m_TargetAssemblyTypeName: CharacterEffectsManager, Assembly-CSharp
+        m_MethodName: PlayDeathAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7362318720993442409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,10 +2662,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec7ccff28c031c4abbeccb7f6a1cef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptHealth: {fileID: 0}
   WeaponFX: {fileID: 0}
-  bloodFX: {fileID: 0}
-  swordSwing: []
-  attackGrunt: []
+  weaponTrail: {fileID: 0}
+  bloodFX:
+  - {fileID: 0}
+  shieldBlockFX: {fileID: 0}
+  weaponImpactSFX: []
+  shieldBlockSFX: []
+  painSFX:
+  - {fileID: 8300000, guid: bc11b938de37f774ca7dae095e769329, type: 3}
+  - {fileID: 8300000, guid: 5a21d439d0824ae4a8e67a89acf40f2a, type: 3}
+  deathSFX:
+  - {fileID: 8300000, guid: d9b7d7fc6cbb1cf4586b3343fbff3f00, type: 3}
+  - {fileID: 8300000, guid: ed5dbd8279befda47bafa570d862880c, type: 3}
+  playerHealth: {fileID: 0}
 --- !u!1 &6504084874387382366
 GameObject:
   m_ObjectHideFlags: 0
