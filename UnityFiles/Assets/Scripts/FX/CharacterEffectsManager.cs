@@ -83,11 +83,12 @@ public class CharacterEffectsManager : MonoBehaviour
         {
             // Debug.Log("ShieldFX played");
 
-            GameObject shieldImpact = GameObject.Find("ShieldImpactLocation");
+            //GameObject rig = GameObject.Find("mixamorig:Hips");
+            GameObject shieldImpact = GameObject.Find("mixamorig:Shield_joint");
 
             // trigger ShieldBlockFX
-            var instance = Instantiate(shieldBlockFX, shieldImpact.transform.position, Quaternion.identity);
-
+            GameObject instance = Instantiate(shieldBlockFX, shieldImpact.transform.position, Quaternion.identity);
+            instance.transform.SetParent(shieldImpact.transform);// to link effect to parent
         }
 
         else
