@@ -39,8 +39,9 @@ public class PlayerAudioManager : MonoBehaviour
 
     private AudioSource audioSource;
 
-
     private TerrainDetector terrainDetector;
+    
+    public PlayerFreeLookState playerFreeLookState;
 
 
     // Start is called before the first frame update
@@ -66,13 +67,39 @@ public class PlayerAudioManager : MonoBehaviour
     }
 
     //play clothes audio
-    public void PlayClothesAudio()
+    public void PlayClothesAudio(float targetRunSpeed)
     {
         
         audioSource.clip = clothesAudio[Random.Range(0, clothesAudio.Length)];
         audioSource.PlayOneShot(audioSource.clip);
-        //Debug.Log(Debugging.name);
+
+        //Bug Fixing: We need to stop the audio from playing when player is in state between idle and running
+
         
+        Debug.Log(playerFreeLookState);
+        //float actualSpeed = playerFreeLookState.currentMovement.magnitude; //Calculation to get the actual movement speed // need to 
+        //Debug.Log("Actual Speed is " + actualSpeed);
+        
+        /*if (getMovementState(targetRunSpeed) == getMovementState(actualSpeed))
+        {
+            
+        }
+        */
+               
+        
+        //Debug.Log(Debugging.name);
+
+    }
+
+    // Method for calculating the movement state: is the player idling or running?
+    private int getMovementState(float speed)
+    {
+        if (speed < 0.5f)
+        {
+            return 0;
+        }
+
+        return 1;
     }
     
     

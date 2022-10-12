@@ -9,6 +9,11 @@ public abstract class PlayerBaseState : State
     public float remainingDodgeTime;
     protected Vector2 dodgingDirectionInput;
 
+    //declare current movement to be able to use it later
+    public Vector3 currentMovement { get; protected set; } // we want to be able to access the variable, but not to manipulate it outside its class
+    
+
+
     public PlayerBaseState(PlayerStateMachine stateMachine)
     {
         this.stateMachine = stateMachine;
@@ -40,7 +45,7 @@ public abstract class PlayerBaseState : State
     //----------------------------------------------------------------------------------------------------------------------
 
     //method for basic movement
-    protected virtual Vector3 CalculateMovement(float deltaTime)
+    public virtual Vector3 CalculateMovement(float deltaTime)
     { 
         
         return new Vector3();

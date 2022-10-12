@@ -139,7 +139,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     }
 
-    protected override Vector3 CalculateMovement(float deltaTime)
+    public override Vector3 CalculateMovement(float deltaTime) // maybe set back to protected?
     {
         Vector3 movement = new Vector3();
         if (remainingDodgeTime > 0f)

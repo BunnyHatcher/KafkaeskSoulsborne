@@ -49,6 +49,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
         //Movement Events
         Vector3 movement = CalculateMovement(deltaTime);
+        this.currentMovement = movement;
 
         Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime); //new method that calls movement method from the PlayerBaseState
         
@@ -108,7 +109,7 @@ public class PlayerFreeLookState : PlayerBaseState
     
     
     //Calculating the movement method
-    protected override Vector3 CalculateMovement(float deltaTime)
+    public override Vector3 CalculateMovement(float deltaTime)
     {
         Vector3 movement = new Vector3();
         if (remainingDodgeTime > 0f)
