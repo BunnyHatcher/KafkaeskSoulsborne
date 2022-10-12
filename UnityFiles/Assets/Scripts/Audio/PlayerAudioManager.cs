@@ -66,7 +66,7 @@ public class PlayerAudioManager : MonoBehaviour
     }
 
     //play clothes audio
-    private void PlayClothesAudio()
+    public void PlayClothesAudio()
     {
         
         audioSource.clip = clothesAudio[Random.Range(0, clothesAudio.Length)];
@@ -77,14 +77,14 @@ public class PlayerAudioManager : MonoBehaviour
     
     
     // play running footsteps audio
-    private void PlayFootsteps()
+    public void PlayFootsteps()
     {
         AudioClip clip = GetRandomClip();
         audioSource.PlayOneShot(clip);
     }
 
     // play walking footsteps audio
-    private void PlayWalkingFootsteps()
+    public void PlayWalkingFootsteps()
     {
         AudioClip clip = GetRandomWalkingClip();
         audioSource.PlayOneShot(clip);
