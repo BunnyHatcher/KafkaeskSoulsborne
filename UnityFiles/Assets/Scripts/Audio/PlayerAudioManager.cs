@@ -40,7 +40,8 @@ public class PlayerAudioManager : MonoBehaviour
     private AudioSource audioSource;
 
     private TerrainDetector terrainDetector;
-    
+
+    [Header("Player Freelook State")]
     public PlayerFreeLookState playerFreeLookState;
 
 
@@ -50,6 +51,7 @@ public class PlayerAudioManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
         terrainDetector = new TerrainDetector();
+        //playerFreeLookState = FindObjectOfType<PlayerFreeLookState>();
     }
 
     //play weapon woosh audio
@@ -71,20 +73,20 @@ public class PlayerAudioManager : MonoBehaviour
     {
         
         audioSource.clip = clothesAudio[Random.Range(0, clothesAudio.Length)];
-        audioSource.PlayOneShot(audioSource.clip);
 
         //Bug Fixing: We need to stop the audio from playing when player is in state between idle and running
 
         
-        Debug.Log(playerFreeLookState);
-        //float actualSpeed = playerFreeLookState.currentMovement.magnitude; //Calculation to get the actual movement speed // need to 
-        //Debug.Log("Actual Speed is " + actualSpeed);
+        //Debug.Log(playerFreeLookState);
+        float actualSpeed = playerFreeLookState.currentMovement.magnitude; //Calculation to get the actual movement speed // need to 
+        Debug.Log("Actual Speed is " + actualSpeed);
         
-        /*if (getMovementState(targetRunSpeed) == getMovementState(actualSpeed))
+        if (GetMovementState(targetRunSpeed) == GetMovementState(actualSpeed))
         {
+            audioSource.PlayOneShot(audioSource.clip);
             
         }
-        */
+        
                
         
         //Debug.Log(Debugging.name);
@@ -92,7 +94,7 @@ public class PlayerAudioManager : MonoBehaviour
     }
 
     // Method for calculating the movement state: is the player idling or running?
-    private int getMovementState(float speed)
+    private int GetMovementState(float speed)
     {
         if (speed < 0.5f)
         {
