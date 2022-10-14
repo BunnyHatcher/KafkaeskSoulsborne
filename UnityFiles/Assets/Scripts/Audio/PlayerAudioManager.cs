@@ -10,7 +10,7 @@ public class PlayerAudioManager : MonoBehaviour
     //Get in the PlayerFreeLookState via a constructor
 
     [Header("Player Freelook State")]
-    public PlayerFreeLookState playerFreeLookState;
+    [field: SerializeField] public PlayerFreeLookState playerFreeLookState;
 
     /*public PlayerAudioManager(PlayerFreeLookState playerFreeLookState);
     {}
