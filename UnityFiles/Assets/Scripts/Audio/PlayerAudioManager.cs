@@ -7,6 +7,16 @@ public class PlayerAudioManager : MonoBehaviour
 {
     //private GameObject Debugging;
 
+    //Get in the PlayerFreeLookState via a constructor
+
+    [Header("Player Freelook State")]
+    public PlayerFreeLookState playerFreeLookState;
+
+    /*public PlayerAudioManager(PlayerFreeLookState playerFreeLookState);
+    {}
+    */
+
+
     [Header("Attack Audio")]
     [SerializeField]
     private AudioClip[] swordSwing;
@@ -41,8 +51,6 @@ public class PlayerAudioManager : MonoBehaviour
 
     private TerrainDetector terrainDetector;
 
-    [Header("Player Freelook State")]
-    public PlayerFreeLookState playerFreeLookState;
 
 
     // Start is called before the first frame update
