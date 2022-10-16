@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
+            FindObjectOfType<AudioManager>().Play("DeathScreen");
             Invoke("Restart", restartDelay);
         }
     }
