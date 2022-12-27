@@ -10,7 +10,7 @@ public class Targeter : MonoBehaviour
 
     private Camera mainCamera;
     
-    private List<Target> targets = new List<Target>();
+    public List<Target> targets = new List<Target>();
 
     public Target CurrentTarget { get; private set; }
 
@@ -19,7 +19,7 @@ public class Targeter : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-
+    #region Manage Triggers
     // Add Target to Target list, if Targeter collider overlaps with collider box of target
     private void OnTriggerEnter(Collider other)
     {
@@ -40,7 +40,11 @@ public class Targeter : MonoBehaviour
         }
     }
 
-    public bool SelectTarget()
+    #endregion
+
+    #region Select & Remove Targets
+
+    public bool SelectTarget() //return a boolean that determines if there is a target or not
     {
         if (targets.Count == 0) { return false; }
 
@@ -107,6 +111,8 @@ public class Targeter : MonoBehaviour
         target.OnDestroyed -= RemoveTarget;
         targets.Remove(target);
     }
+
+    #endregion
 
 
 }
