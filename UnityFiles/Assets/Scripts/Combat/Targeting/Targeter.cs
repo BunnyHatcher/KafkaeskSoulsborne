@@ -62,7 +62,9 @@ public class Targeter : MonoBehaviour
             //... check the target's position            
             Vector2 viewPos = mainCamera.WorldToViewportPoint(target.transform.position);// if the target is indeed on the screen, viewPos will be between 0|0 and 1|1
 
-            //old version: if  (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
+            //old version: 
+            //if  (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
+            
             //new version, also more reliable
             if (!target.GetComponentInChildren<Renderer>().isVisible) // if not visible, continue 
             {
